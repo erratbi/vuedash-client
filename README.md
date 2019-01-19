@@ -1,4 +1,4 @@
-# listings
+# VueDash Client
 
 ## Project setup
 ```
