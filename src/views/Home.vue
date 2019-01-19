@@ -3,10 +3,21 @@
     <sidebar/>
     <div id="page">
       <h1>Dashboard coming soon</h1>
-      <router-link to="/orders/paid">Orders list</router-link>
+      <router-link v-if="user.isAdmin" to="/orders/paid">Orders list</router-link>
+      <router-link v-if="user.isModerator" to="/mod/orders/paid">Orders list</router-link>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    }
+  }
+};
+</script>
 
 
 <style lang="scss" scoped>
